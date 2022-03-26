@@ -1,0 +1,14 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+
+	mat-form-field {
+		width: 200px;
+	}
+
+	.search-btn {
+		margin-top: 24px;
+	}
+}

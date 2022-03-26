@@ -1,0 +1,27 @@
+<form (ngSubmit)="onSearch()" [formGroup]="searchFormGroup" class="wrapper">
+	<mat-form-field appearance="outline">
+		<mat-label>City</mat-label>
+		<input formControlName="searchWord" matInput/>
+		<button
+			(click)="searchFormGroup.get('searchWord')?.setValue('')"
+			*ngIf="searchFormGroup.get('searchWord')?.value"
+			aria-label="Clear"
+			mat-icon-button
+			matSuffix
+			tabindex="-1"
+			type="button"
+		>
+			<mat-icon>close</mat-icon>
+		</button>
+	</mat-form-field>
+
+	<div class="filters">
+		<mat-radio-group aria-label="Select an option" formControlName="mode">
+			<mat-radio-button class="mr2" value="hourly">Hourly</mat-radio-button>
+			<mat-radio-button value="daily">Daily</mat-radio-button>
+		</mat-radio-group>
+	</div>
+	<button [disabled]="!searchFormGroup.valid" class="search-btn" color="primary" mat-raised-button type="submit">
+		Search
+	</button>
+</form>

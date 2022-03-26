@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
+	background: lightgrey;
+}
+
+$offset1: 8px;
+$offset2: 16px;
+$offset3: 24px;
+
+.mr1 {
+	margin-right: $offset1;
+}
+
+.mr2 {
+	margin-right: $offset2;
+}
+
+.mr3 {
+	margin-right: $offset3;
+}
+
+.spinner {
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.7);
+	z-index: 999;
+}
