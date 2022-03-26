@@ -7,7 +7,7 @@ import { IForecastRes, ISearchCityRes } from './forecast.model';
 	providedIn: 'root',
 })
 export class ForecastService {
-	private _apiKey = '010721642521f31b0fbc8c3831d45951';
+	private _apiKey = 'c6ce02ddeb11e781e83f136c3b8e9c17';
 	private _searchForecastStartUrl = 'https://api.openweathermap.org/data/2.5/onecall?';
 
 	constructor(private _http: HttpClient) {}
