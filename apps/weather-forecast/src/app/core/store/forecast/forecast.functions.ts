@@ -44,7 +44,7 @@ export const processHourlyApiData = (hourlyForecast: IForecastRes, city: string)
 	for (const { dt, temp } of hourlyForecast.hourly) {
 		const timeInHhMm = convertUnixToHhMm(dt);
 		if (HOURS.includes(timeInHhMm)) {
-			processHourlyDataArray.push({ time: timeInHhMm, temp: `${Math.floor(temp)}°` });
+			processHourlyDataArray.push({ time: timeInHhMm, temp: `${Math.round(temp)}°` });
 		}
 	}
 	const indexOfThreeAm = processHourlyDataArray.findIndex(({ time }) => time === '03:00');
@@ -65,7 +65,7 @@ export const processDailyApiData = (dailyForecast: IForecastRes, city: string): 
 	const processedDailyData: { [key: string]: string } = { 'City name': city };
 	for (const { dt, temp } of dailyForecast.daily.slice(0, -1)) {
 		const weekDay = getWeekDayFromUnixTime(dt);
-		processedDailyData[weekDay] = `${Math.floor(temp.day)}°`;
+		processedDailyData[weekDay] = `${Math.round(temp.day)}°`;
 	}
 	return [processedDailyData];
 };
